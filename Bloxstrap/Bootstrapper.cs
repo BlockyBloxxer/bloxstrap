@@ -17,6 +17,9 @@ using System.Windows.Forms;
 using Microsoft.Win32;
 
 using Bloxstrap.AppData;
+using System.Runtime.InteropServices;
+using System.Drawing;
+using FontFamily = Bloxstrap.Models.FontFamily;
 
 namespace Bloxstrap
 {
@@ -43,6 +46,12 @@ namespace Bloxstrap
         private string _launchCommandLine = App.LaunchSettings.RobloxLaunchArgs;
         private LaunchMode _launchMode = App.LaunchSettings.RobloxLaunchMode;
         private bool _installWebView2;
+
+        public string WindowTitle => App.Settings.Prop.BootstrapperTitle;
+
+        private const int WM_SETICON = 0x80;
+        private const int ICON_SMALL = 0;
+        private const int ICON_BIG = 1;
 
         private string _versionGuid
         {
@@ -335,10 +344,25 @@ namespace Bloxstrap
             {
                 startEvent.Reset();
 
+                [DllImport("user32.dll")]
+                static extern int SetWindowText(IntPtr hWnd, string text);
+                [DllImport("user32.dll")]
+                static extern int SendMessage(IntPtr hwnd, int message, int wParam, IntPtr lParam);
+
                 // v2.2.0 - byfron will trip if we keep a process handle open for over a minute, so we're doing this now
                 using (var process = Process.Start(startInfo)!)
                 {
                     gameClientPid = process.Id;
+
+                    if (App.Settings.Prop.CustomPlayerIcon == true) {
+                        Icon icon = App.Settings.Prop.BootstrapperIcon.GetIcon();
+
+                        process.WaitForInputIdle();
+                        Thread.Sleep(500); // Dodgy
+                        SetWindowText(process.MainWindowHandle, WindowTitle);
+                        SendMessage(process.MainWindowHandle, WM_SETICON, ICON_BIG, icon.Handle); 
+                        // Fix: Icon being blurred in the taskbar (???)
+                    }
                 }
 
                 App.Logger.WriteLine(LOG_IDENT, $"Started Roblox (PID {gameClientPid}), waiting for start event");

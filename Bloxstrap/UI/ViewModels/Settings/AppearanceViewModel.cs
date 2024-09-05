@@ -95,6 +95,12 @@ namespace Bloxstrap.UI.ViewModels.Settings
             set => App.Settings.Prop.BootstrapperTitle = value;
         }
 
+        public bool CustomPlayerIcon
+        {
+            get => App.Settings.Prop.CustomPlayerIcon;
+            set => App.Settings.Prop.CustomPlayerIcon = value;
+        }
+
         public string CustomIconLocation
         {
             get => App.Settings.Prop.BootstrapperIconCustomLocation;

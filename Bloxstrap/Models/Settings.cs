@@ -15,6 +15,7 @@ namespace Bloxstrap.Models
         public string Locale { get; set; } = "nil";
         public bool ForceRobloxLanguage { get; set; } = false;
         public bool UseFastFlagManager { get; set; } = true;
+        public bool CustomPlayerIcon { get; set; } = true;
 
         // integration configuration
         public bool EnableActivityTracking { get; set; } = true;

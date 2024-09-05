@@ -1721,6 +1721,24 @@ namespace Bloxstrap.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Apply Bootstrapper icon and title to the Roblox Client..
+        /// </summary>
+        public static string Menu_Appearance_AppearanceOnPlayerClient_Description {
+            get {
+                return ResourceManager.GetString("Menu.Appearance.AppearanceOnPlayerClient.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Apply to Roblox.
+        /// </summary>
+        public static string Menu_Appearance_AppearanceOnPlayerClient_Title {
+            get {
+                return ResourceManager.GetString("Menu.Appearance.AppearanceOnPlayerClient.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You can make it look different, retro, or even just like Roblox..
         /// </summary>
         public static string Menu_Appearance_Bootstrapper_Description {

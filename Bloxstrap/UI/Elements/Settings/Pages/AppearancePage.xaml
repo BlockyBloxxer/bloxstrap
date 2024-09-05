@@ -75,6 +75,12 @@
             </ComboBox>
         </controls:OptionControl>
 
+        <controls:OptionControl 
+            Header="{x:Static resources:Strings.Menu_Appearance_AppearanceOnPlayerClient_Title}" 
+            Description="{x:Static resources:Strings.Menu_Appearance_AppearanceOnPlayerClient_Description}">
+            <ui:ToggleSwitch IsChecked="{Binding CustomPlayerIcon, Mode=TwoWay}" />
+        </controls:OptionControl>
+
         <ui:CardExpander Margin="0,8,0,0" IsExpanded="False">
             <ui:CardExpander.Header>
                 <Grid>
