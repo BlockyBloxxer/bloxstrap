@@ -70,7 +70,7 @@ namespace Bloxstrap.UI.Elements.ContextMenu
                 return;
 
             Dispatcher.Invoke(() => {
-                if (_activityWatcher.ActivityServerType == ServerType.Public)
+                if (_activityWatcher.Data.ServerType == ServerType.Public)
                     InviteDeeplinkMenuItem.Visibility = Visibility.Visible;
 
                 ServerDetailsMenuItem.Visibility = Visibility.Visible;
@@ -104,7 +104,7 @@ namespace Bloxstrap.UI.Elements.ContextMenu
 
         private void RichPresenceMenuItem_Click(object sender, RoutedEventArgs e) => _watcher.RichPresence?.SetVisibility(((MenuItem)sender).IsChecked);
 
-        private void InviteDeeplinkMenuItem_Click(object sender, RoutedEventArgs e) => Clipboard.SetDataObject(_activityWatcher?.GetActivityDeeplink());
+        private void InviteDeeplinkMenuItem_Click(object sender, RoutedEventArgs e) => Clipboard.SetDataObject(_activityWatcher?.Data.GetInviteDeeplink());
 
         private void ServerDetailsMenuItem_Click(object sender, RoutedEventArgs e) => ShowServerInformationWindow();
 
@@ -128,6 +128,14 @@ namespace Bloxstrap.UI.Elements.ContextMenu
                 return;
 
             _watcher.KillRobloxProcess();
+        }
+
+        private void JoinLastServerMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            if (_activityWatcher is null)
+                throw new ArgumentNullException(nameof(_activityWatcher));
+
+            new ServerHistory(_activityWatcher).ShowDialog();
         }
     }
 }

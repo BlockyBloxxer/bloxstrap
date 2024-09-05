@@ -106,20 +106,20 @@ namespace Bloxstrap.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to left game.
+        ///   Looks up a localized string similar to Failed to query server location..
         /// </summary>
-        public static string ActivityTracker_LeftGame {
+        public static string ActivityWatcher_LocationQueryFailed {
             get {
-                return ResourceManager.GetString("ActivityTracker.LeftGame", resourceCulture);
+                return ResourceManager.GetString("ActivityWatcher.LocationQueryFailed", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to lookup failed.
+        ///   Looks up a localized string similar to Your current game will not show on your Discord presence because an error occurred when loading the game information..
         /// </summary>
-        public static string ActivityTracker_LookupFailed {
+        public static string ActivityWatcher_RichPresenceLoadFailed {
             get {
-                return ResourceManager.GetString("ActivityTracker.LookupFailed", resourceCulture);
+                return ResourceManager.GetString("ActivityWatcher.RichPresenceLoadFailed", resourceCulture);
             }
         }
         
@@ -666,20 +666,38 @@ namespace Bloxstrap.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Game history is only recorded for your current Roblox session. Games will appear here as you leave them or teleport within them..
+        /// </summary>
+        public static string ContextMenu_GameHistory_Description {
+            get {
+                return ResourceManager.GetString("ContextMenu.GameHistory.Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rejoin.
+        /// </summary>
+        public static string ContextMenu_GameHistory_Rejoin {
+            get {
+                return ResourceManager.GetString("ContextMenu.GameHistory.Rejoin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Game history.
+        /// </summary>
+        public static string ContextMenu_GameHistory_Title {
+            get {
+                return ResourceManager.GetString("ContextMenu.GameHistory.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Roblox is still launching. A log file will only be available once Roblox launches..
         /// </summary>
         public static string ContextMenu_RobloxNotRunning {
             get {
                 return ResourceManager.GetString("ContextMenu.RobloxNotRunning", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to See server details.
-        /// </summary>
-        public static string ContextMenu_SeeServerDetails {
-            get {
-                return ResourceManager.GetString("ContextMenu.SeeServerDetails", resourceCulture);
             }
         }
         
@@ -1220,7 +1238,7 @@ namespace Bloxstrap.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Private.
+        ///   Looks up a localized string similar to Private server.
         /// </summary>
         public static string Enums_ServerType_Private {
             get {
@@ -1229,7 +1247,7 @@ namespace Bloxstrap.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Public.
+        ///   Looks up a localized string similar to Public server.
         /// </summary>
         public static string Enums_ServerType_Public {
             get {
@@ -1238,7 +1256,7 @@ namespace Bloxstrap.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Reserved.
+        ///   Looks up a localized string similar to Reserved server.
         /// </summary>
         public static string Enums_ServerType_Reserved {
             get {
@@ -1458,7 +1476,7 @@ namespace Bloxstrap.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Thank you for downloading Bloxstrap. 
         ///
-        ///You should have gotten it from either {0} or {1}. Those are the only official websites to get it from.
+        ///You should have downloaded it from either {0} or {1}. Those are the only official websites to get it from. It is your responsibility to ensure you download from an official source.
         ///
         ///This installation process will be quick and simple, and you will be able to configure any of Bloxstrap&apos;s settings after installation..
         /// </summary>
@@ -1492,6 +1510,24 @@ namespace Bloxstrap.Resources {
         public static string Installer_Welcome_UpdateNotice {
             get {
                 return ResourceManager.GetString("Installer.Welcome.UpdateNotice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your Fast Flags could not be loaded. They have been reset to the default configuration..
+        /// </summary>
+        public static string JsonManager_FastFlagsLoadFailed {
+            get {
+                return ResourceManager.GetString("JsonManager.FastFlagsLoadFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your Settings could not be loaded. They have been reset to the default configuration..
+        /// </summary>
+        public static string JsonManager_SettingsLoadFailed {
+            get {
+                return ResourceManager.GetString("JsonManager.SettingsLoadFailed", resourceCulture);
             }
         }
         
