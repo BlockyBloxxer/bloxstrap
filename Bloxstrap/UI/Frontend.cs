@@ -5,6 +5,7 @@ using Bloxstrap.UI.Elements.Dialogs;
 using Bloxstrap.UI.Elements.Settings;
 using Bloxstrap.UI.Elements.Installer;
 using System.Drawing;
+using Bloxstrap.Enums;
 
 namespace Bloxstrap.UI
 {
@@ -24,6 +25,7 @@ namespace Bloxstrap.UI
             {
                 case BootstrapperStyle.FluentDialog:
                 case BootstrapperStyle.ClassicFluentDialog:
+                case BootstrapperStyle.ModernDialog:
                 case BootstrapperStyle.FluentAeroDialog:
                 case BootstrapperStyle.ByfronDialog:
                     return ShowFluentMessageBox(message, icon, buttons);
@@ -72,6 +74,7 @@ namespace Bloxstrap.UI
                 BootstrapperStyle.LegacyDialog2011 => new LegacyDialog2011(),
                 BootstrapperStyle.ProgressDialog => new ProgressDialog(),
                 BootstrapperStyle.ClassicFluentDialog => new ClassicFluentDialog(),
+                BootstrapperStyle.ModernDialog => new ModernDialog(false),
                 BootstrapperStyle.ByfronDialog => new ByfronDialog(),
                 BootstrapperStyle.FluentDialog => new FluentDialog(false),
                 BootstrapperStyle.FluentAeroDialog => new FluentDialog(true),

@@ -328,6 +328,9 @@ If not, then please report this exception through a [GitHub issue]({1}) along wi
   <data name="Enums.BootstrapperStyle.ClassicFluentDialog" xml:space="preserve">
     <value>Bloxstrap (Classic)</value>
   </data>
+  <data name="Enums.BootstrapperStyle.ModernDialog" xml:space="preserve">
+    <value>Bloxstrap (Modern)</value>
+  </data>
   <data name="Enums.BootstrapperStyle.FluentAeroDialog" xml:space="preserve">
     <value>Bloxstrap (Glass)</value>
   </data>

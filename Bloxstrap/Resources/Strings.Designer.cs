@@ -1031,6 +1031,15 @@ namespace Bloxstrap.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Bloxstrap (Modern).
+        /// </summary>
+        public static string Enums_BootstrapperStyle_ModernDialog {
+            get {
+                return ResourceManager.GetString("Enums.BootstrapperStyle.ModernDialog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Roblox (~2014).
         /// </summary>
         public static string Enums_BootstrapperStyle_ProgressDialog {
